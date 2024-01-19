@@ -1,0 +1,8 @@
+#! /bin/bash
+# vi: ft=bash
+
+if [ "$1" = "run" ]; then
+    exec host-spawn -no-pty flatpak "$@"
+else
+    exec host-spawn flatpak "$@"
+fi

@@ -1,0 +1,6 @@
+#! /bin/bash
+# vi: ft=bash
+
+prog=$(basename $0)
+
+exec host-spawn -no-pty "$@"
