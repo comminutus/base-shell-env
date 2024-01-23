@@ -17,6 +17,7 @@
   - `podman`
   - `rpm`
   - `systemctl`
+  - `tailscale`
 
 
 ## Getting Started
