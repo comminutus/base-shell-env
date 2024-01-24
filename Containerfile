@@ -48,24 +48,12 @@ RUN dnf install -y  \
     wget            \
     which
 
-# Install host-spawn. A modified version if it is installed already in Distrobox
-# via distrobox-host-exec, however it doesn't have the '-no-pty' aargument that
-# host-spawn does, which is necessasry for running some Flatpak programs.
-RUN export host_spawn_version=$(curl -sL "https://api.github.com/repos/1player/host-spawn/releases/latest" | jq -r ".tag_name")         && \
-    curl -fsLSo /tmp/host-spawn "https://github.com/1player/host-spawn/releases/download/${host_spawn_version}/host-spawn-$(uname -m)"  && \
-    mv /tmp/host-spawn /usr/bin/                                                                                                        && \
-    chmod +x /usr/bin/host-spawn
-COPY container_bin/* /usr/local/bin
-RUN chmod +x /usr/local/bin/*
-
-RUN ln -s /usr/bin/host-spawn-no-pty    /usr/local/bin/com.vscodium.codium  && \
-    ln -s /usr/bin/host-spawn           /usr/local/bin/distrobox            && \
-    ln -s /usr/bin/host-spawn           /usr/local/bin/fwupdmgr             && \
-    ln -s /usr/bin/host-spawn-no-pty    /usr/local/bin/org.vim.Vim          && \
-    ln -s /usr/bin/host-spawn           /usr/local/bin/podman               && \
-    ln -s /usr/bin/host-spawn           /usr/local/bin/rpm-ostree           && \
-    ln -s /usr/bin/host-spawn           /usr/local/bin/systemctl            && \
-    ln -s /usr/bin/host-spawn           /usr/local/bin/tailscale
+RUN ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/distrobox            && \
+    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/fwupdmgr             && \
+    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/podman               && \
+    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/rpm-ostree           && \
+    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/systemctl            && \
+    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/tailscale
 
 # starship
 ARG nerd_font_name=IntoneMono
