@@ -32,7 +32,7 @@ RUN dnf install -y  \
     git             \
     gitk            \
     git-lfs         \
-    gnupg           \
+    gnupg2          \
     info            \
     iproute         \
     iputils         \

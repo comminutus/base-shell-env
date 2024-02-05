@@ -9,12 +9,14 @@
         "Distrobox",
         "fulcio",
         "fwupdmgr",
+        "gitk",
         "marvinpinto",
         "ostree",
         "Rekor",
         "sarif",
         "sigstore",
         "tailscale",
+        "Texinfo",
         "Trivy"
     ]
 }
