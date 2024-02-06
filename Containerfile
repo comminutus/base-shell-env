@@ -48,12 +48,17 @@ RUN dnf install -y  \
     wget            \
     which
 
-RUN ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/distrobox            && \
-    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/fwupdmgr             && \
-    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/podman               && \
-    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/rpm-ostree           && \
-    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/systemctl            && \
-    ln -s /usr/bin/distrobox-host-exec                 /usr/local/bin/tailscale
+COPY container_bin/* /usr/local/bin
+RUN chmod +x /usr/local/bin/*
+
+RUN ln -s /usr/bin/host-spawn-no-pty    /usr/local/bin/com.vscodium.codium  && \
+    ln -s /usr/bin/host-spawn           /usr/local/bin/distrobox            && \
+    ln -s /usr/bin/host-spawn           /usr/local/bin/fwupdmgr             && \
+    ln -s /usr/bin/host-spawn-no-pty    /usr/local/bin/org.vim.Vim          && \
+    ln -s /usr/bin/host-spawn           /usr/local/bin/podman               && \
+    ln -s /usr/bin/host-spawn           /usr/local/bin/rpm-ostree           && \
+    ln -s /usr/bin/host-spawn           /usr/local/bin/systemctl            && \
+    ln -s /usr/bin/host-spawn           /usr/local/bin/tailscale
 
 # starship
 ARG nerd_font_name=IntoneMono
