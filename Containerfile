@@ -26,6 +26,7 @@ RUN dnf reinstall -y    \
     shadow-utils
 
 RUN dnf install -y  \
+    ansible         \
     bash-completion \
     bind-utils      \
     jq              \
