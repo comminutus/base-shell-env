@@ -21,6 +21,7 @@
         "sigstore",
         "tailscale",
         "Texinfo",
-        "Trivy"
+        "Trivy",
+        "yolo"
     ]
 }

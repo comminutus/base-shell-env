@@ -36,11 +36,14 @@ You must have a container runtime installed, like [Podman](https://github.com/co
 
 Pull down the image and use it directly with Distrobox or Toolbox:
 ```
-podman pull ghcr.io/comminutus/base-shell-env 
-distrobox create -i comminutus/base-shell-env
-distrobox enter base-shell-env
+distrobox create -i ghcr.io/comminutus/base-shell-env base
+distrobox enter base
 ```
+_or yolo_
 
+```
+curl -s https://raw.githubusercontent.com/comminutus/base-shell-env/master/create-distrobox.bash | bash -c 'eval "$(cat)"'
+```
 Or use it as the base for other images in a `Containerfile` or `Dockerfile` to create more shell images:
 ```
 FROM ghcr.io/comminutus/base-shell-env:latest
