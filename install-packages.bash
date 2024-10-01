@@ -12,7 +12,6 @@ container_packages=(
     git
     gitk
     git
-    gnupg2
     info
     iproute
     iputils
@@ -31,7 +30,6 @@ container_packages=(
 )
 
 distrobox_packages=(
-   gnupg2
    pinentry
    zip
 )
