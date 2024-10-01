@@ -30,6 +30,7 @@ container_packages=(
 )
 
 distrobox_packages=(
+   gnupg2
    pinentry
    zip
 )
