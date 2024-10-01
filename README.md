@@ -10,12 +10,20 @@
 - [Starship](https://github.com/starship/starship) installed.
 - [Chezmoi](https://github.com/twpayne/chezmoi) installed.
 - Some commands run on the host system so you don't have to flip between a `base-shell-env` shell and your host's shell:
+  - `dconf`
   - `distrobox`
+  - `flatpak`
   - `fwupdmgr`
+  - `gsettings`
+  - `journalctl`
+  - `org.gnome.Meld`
+  - `org.vim.Vim`
+  - `ostree`
   - `podman`
-  - `rpm`
+  - `rpm-ostree`
   - `systemctl`
   - `tailscale`
+  - `xdg-open`
 
 
 ## Getting Started
