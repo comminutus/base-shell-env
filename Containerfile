@@ -1,4 +1,4 @@
-FROM fedora-toolbox:40
+FROM registry.fedoraproject.org/fedora-toolbox:40
 
 WORKDIR "$HOME"
 
