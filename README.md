@@ -24,6 +24,8 @@
   - `systemctl`
   - `tailscale`
   - `xdg-open`
+  - `yq`
+  - `ytt`
 
 
 ## Getting Started

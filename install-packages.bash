@@ -123,6 +123,14 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 # Chezmoi
 sh -c "$(curl -fsLS get.chezmoi.io)"
 
+# yq (like jq, but for yaml)
+wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/local/bin/yq
+chmod +x /usr/local/bin/yq
+    
+# ytt (YAML templating tool: https://carvel.dev/ytt/)
+wget https://github.com/carvel-dev/ytt/releases/latest/download/ytt-linux-amd64 -O /usr/local/bin/ytt
+chmod +x /usr/local/bin/ytt
+
 # Trivy
 curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin v0.48.3
 
